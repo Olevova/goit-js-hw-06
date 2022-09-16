@@ -9,17 +9,21 @@ const ingredients = [
 
 
 const list = document.querySelector("ul");
-const elemLi = ingredients.map((i) => {
+
+const elemLi = ingredients.map((text) => {
 const item = document.createElement("li");
-  item.textContent = i;
-  item.classList.add("item")
-  console.log(item);
+item.textContent = text;
+console.log(item);
 return item
 })
 
+list.append(...elemLi);
 
-elemLi.forEach((i) => list.append(i));
+
+// second solution of spread
+// elemLi.forEach((i) => list.append(i));
 // console.log(elemLi);
+
 
 
 

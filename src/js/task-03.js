@@ -13,12 +13,27 @@ const images = [
   },
 ]
 
+// First solution
 
-const myImage = images.map(({ url, alt }) => 
-  `<li><img src=${url} alt=${alt} /></li>`
-).join("");
+// const myImage = images.map(({ url, alt }) => 
+//   `<li><img src=${url} alt=${alt} /></li>`
+// ).join("");
 
-console.log(myImage);
+// console.log(myImage);
 
+// const list = document.querySelector(".gallery");
+// list.insertAdjacentHTML("beforeend", myImage)
+
+// +++++++++Second Solution++++++++++++
 const list = document.querySelector(".gallery");
-list.insertAdjacentHTML("beforeend", myImage)
+list.classList.add("third-task-img");
+const myImage2 = images.map(({ url, alt }) => {
+  const image = document.createElement("img");
+  image.src = url;
+  image.alt = alt;
+  return image;
+
+});
+
+list.append(...myImage2);
+
