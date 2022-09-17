@@ -6,14 +6,14 @@ const counterEl = document.querySelector("#value");
 let counter = Number(counterEl.textContent);
 console.log(counter);
 
-const plus = () => {
+const onPlusClick = () => {
     let value = counter += 1
     return counterEl.textContent = value};
-const minus = () => {
+const onMinusClick = () => {
     let value = counter -= 1
     return counterEl.textContent = value
 }
     ;
 
-buttonPlusEl.addEventListener("click", plus);
-buttonMinusEl.addEventListener("click", minus);
+buttonPlusEl.addEventListener("click", onPlusClick);
+buttonMinusEl.addEventListener("click", onMinusClick);
