@@ -13,27 +13,51 @@ const images = [
   },
 ]
 
-// First solution
+//++++++++++++++++++++First solution+++++++++++++++++++++
 
-// const myImage = images.map(({ url, alt }) => 
-//   `<li><img src=${url} alt=${alt} /></li>`
-// ).join("");
+const myImage = images.map(({ url, alt }) => 
+  `<li> <img src=${url} alt=${alt} /> </li>`
+).join("");
 
-// console.log(myImage);
+console.log(myImage);
 
-// const list = document.querySelector(".gallery");
-// list.insertAdjacentHTML("beforeend", myImage)
-
-// +++++++++Second Solution++++++++++++
 const list = document.querySelector(".gallery");
 list.classList.add("third-task-img");
-const myImage2 = images.map(({ url, alt }) => {
-  const image = document.createElement("img");
-  image.src = url;
-  image.alt = alt;
-  return image;
+list.insertAdjacentHTML("beforeend", myImage);
 
-});
 
-list.append(...myImage2);
+
+// +++++++++Second Solution++++++++++++
+// const list = document.querySelector(".gallery");
+// list.classList.add("third-task-img");
+
+
+// const makeImage = ({ url, alt }) => {
+//     const image = document.createElement("img");
+//     image.src = url;
+//     image.alt = alt;
+//     console.log(`<li>${image}</li>`);
+//     return image;
+
+// }
+
+// const makeImgBlock = (arr) => arr.map(makeImage);
+
+// const myImage =  makeImgBlock(images);
+// list.append(...myImage);
+
+// ++++++++++++Third solution++++++++++++++++++++++
+// const list = document.querySelector(".gallery");
+// list.classList.add("third-task-img");
+// const makeImage = (arr) => arr.map(({ url, alt }) => {
+//     const image = document.createElement("img");
+//     image.src = url;
+//     image.alt = alt;
+//     console.log(image);
+//     return image;
+
+//   });
+
+// const myImage2 = makeImage(images);
+// list.append(...myImage2);
 
