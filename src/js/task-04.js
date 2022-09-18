@@ -6,10 +6,12 @@ const counterEl = document.querySelector("#value");
 let counter = Number(counterEl.textContent);
 console.log(counter);
 
-const onPlusClick = () => {
+const onPlusClick = (event) => {
+    console.log(event);
     let value = counter += 1
     return counterEl.textContent = value};
-const onMinusClick = () => {
+const onMinusClick = (event) => {
+    console.log(event);
     let value = counter -= 1
     return counterEl.textContent = value
 }
