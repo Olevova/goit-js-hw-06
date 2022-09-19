@@ -4,7 +4,7 @@ const formEl = document.querySelector(".login-form");
 // console.log(formEl);
 const forma = (event) => {
     event.preventDefault();
-    console.log(event.currentTarget);
+    console.log(event.currentTarget.elements);
     const {elements:{ email, password }
   } = event.currentTarget;
   console.log(email.value, password.value);
