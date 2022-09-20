@@ -3,11 +3,20 @@ const formEl = document.querySelector(".login-form");
 
 // console.log(formEl);
 const forma = (event) => {
-    event.preventDefault();
-    console.log(event.currentTarget.elements);
-    const {elements:{ email, password }
-  } = event.currentTarget;
-  console.log(email.value, password.value);
+  
+  event.preventDefault();
+  const {elements:{email, password}} = event.currentTarget;
+  if (!email.value || !password.value){
+    return alert("Всі поля мають бути заповнені");
+  }
+  const userValues =
+  {
+    email: email.value,
+    password: password.value
+  }
+  
+  console.log(userValues);
+  event.currentTarget.reset();
 }
 
 formEl.addEventListener("submit", forma);
